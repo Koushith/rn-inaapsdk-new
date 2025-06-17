@@ -18,12 +18,9 @@ import {
 } from 'react-native';
 import { useState } from 'react';
 import { ReclaimVerification } from '@reclaimprotocol/inapp-rn-sdk';
+import secrets from './secrets.json';
 
 const reclaimVerification = new ReclaimVerification();
-
-const APP_ID = '0x486dD3B9C8DF7c9b263C75713c79EC1cf8F592F2';
-const APP_SECRET =
-  '0x1f86678fe5ec8c093e8647d5eb72a65b5b2affb7ee12b70f74e519a77b295887';
 
 export const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -41,8 +38,8 @@ export const App = () => {
 
     try {
       const result = await reclaimVerification.startVerification({
-        appId: APP_ID,
-        secret: APP_SECRET,
+        appId: secrets.RECLAIM_APP_ID,
+        secret: secrets.RECLAIM_APP_SECRET,
         providerId: inputText,
       });
 
