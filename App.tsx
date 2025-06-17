@@ -214,7 +214,7 @@ export const App = () => {
               ]}
             >
               <Text style={[styles.label, { color: theme.text }]}>
-                Console Output
+                Reclaim Proof
               </Text>
               <ScrollView
                 style={[
